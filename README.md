@@ -1,7 +1,7 @@
 # Compte Rendu - TP 1 : Chiffrement authentifié et dérivation de clés
 
 **Module :** Ingénierie de la cryptographie   
-**Auteur :** Élève-Ingénieur  
+**Auteur :** Zoulkarnaïne SAWADOGO   
 **Enseignant :** Dr. Zakaria Sawadogo  
 **Année universitaire :** 2026-2027  
 

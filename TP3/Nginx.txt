@@ -1,0 +1,31 @@
+# Configuration Nginx pour le TP 3 - Canal Sécurisé & mTLS
+# Fichier à placer dans /etc/nginx/sites-available/tp3-mtls et à simlink vers /etc/nginx/sites-enabled/
+
+server {
+    listen 443 ssl;
+    server_name www.tp.local;
+
+    # Certificat serveur (chaîne complète : serveur.crt + inter.crt) et clé privée
+    ssl_certificate     /etc/nginx/tls/serveur_chaine.crt;
+    ssl_certificate_key /etc/nginx/tls/serveur.key;
+
+    # Protocoles & Sécurité SSL/TLS
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_prefer_server_ciphers off;
+    ssl_session_tickets off;
+
+    # Authentification Mutuelle des Clients (mTLS)
+    ssl_client_certificate /etc/nginx/tls/racine.crt;
+    ssl_verify_client on;
+    ssl_verify_depth 2;
+    ssl_crl /etc/nginx/tls/crls.pem;
+
+    # En-tête HSTS (HTTP Strict Transport Security)
+    add_header Strict-Transport-Security "max-age=31536000" always;
+
+    # Traitement des requêtes
+    location / {
+        default_type text/plain;
+        return 200 "Bonjour $ssl_client_s_dn\n";
+    }
+}

@@ -1,7 +1,7 @@
 # Compte Rendu - TP 2 : Construction d'une Infrastructure de Gestion de Clés (PKI)
 
 **Module :** EC1 - Ingénierie de la Cryptographie  
-**Auteur :** Étudiant en Master Ingénierie Cryptographique  
+**Auteur :** Zoulkarnaïne SAWADOGO
 **Enseignant :** Dr. Zakaria Sawadogo  
 **Année Universitaire :** 2026-2027
 
